@@ -33,17 +33,33 @@ cd qemu-bbvs-flow
 
 ### 2. Run Dhrystone Analysis
 ```bash
-./build_and_run.sh dhrystone
+./build_and_run.sh dhrystone 
+# OR
+
+./build_docker.sh 
+./run_workload.sh dhrystone
 ```
 
 ### 3. Run Embench Analysis
 ```bash
-./build_and_run.sh embench
+#Embench gets compiled during the build itself
+./build_docker.sh 
+
+# Run specific Embench workload with BBV 
+docker run --rm -v $(pwd)/simpoint_output:/output qemu-simpoint-unified /run_embench_simple.sh [workload_name] --bbv
+#[For example] – 
+docker run --rm -v $(pwd)/simpoint_output:/output qemu-simpoint-unified /run_embench_simple.sh crc32 --bbv
+
 ```
 
 ### 4. Run Custom Workload
 ```bash
 ./build_and_run.sh custom /path/to/your/source "-O2 -static" riscv64
+```
+### 5. Individual Component Execution
+```bash
+./build_docker.sh
+./run_workload.sh [workload_type] [parameters]
 ```
 
 ## Prerequisites
@@ -128,7 +144,8 @@ cd qemu-bbvs-flow
 
 #### Embench with Custom Settings
 ```bash
-./build_and_run.sh embench "" "-march=rv32i -mabi=ilp32 -static" riscv32 50 20
+#Embench gets compiled during the build itself
+./build_docker.sh
 ```
 
 #### Custom Workload
