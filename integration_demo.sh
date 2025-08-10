@@ -126,7 +126,33 @@ fi
 echo ""
 echo "=============================================="
 echo "Next Steps:"
-echo "1. Use './run_workload.sh embench' for full Embench analysis"
+echo "1. Embench is already compiled in the build"
+echo "Available Embench workloads:
+================================
+ 1. aha-mont64
+ 2. crc32
+ 3. cubic
+ 4. edn
+ 5. huffbench
+ 6. matmult-int
+ 7. md5sum
+ 8. minver
+ 9. nbody
+10. nettle-aes
+11. nettle-sha256
+12. nsichneu
+13. picojpeg
+14. primecount
+15. qrduino
+16. sglib-combined
+17. slre
+18. st
+19. statemate
+20. tarfind
+21. ud
+22. wikisort
+================================
+Total: 22 workloads"
 echo "2. Use standalone runner: docker run --rm -v \$(pwd)/simpoint_output:/output qemu-simpoint-unified /run_embench_simple.sh --all"
 echo "3. Add your own workloads using the generic handler"
 echo "=============================================="
