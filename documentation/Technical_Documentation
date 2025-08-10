@@ -27,6 +27,7 @@ qemu-bbvs-flow/
 ├── Dockerfile                   # Unified Docker image
 ├── setup_workload.sh           # Workload setup script
 ├── run_analysis.sh             # Analysis execution script
+├── run_embench_simple.sh       # embench compilation script
 ├── build_docker.sh             # Docker image build script
 ├── run_workload.sh             # Workload execution script
 ├── build_and_run.sh            # Complete workflow script

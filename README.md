@@ -408,17 +408,18 @@ ls -lh simpoint_output/*.bb
 
 ```
 qemu-bbvs-flow/
-├── README.md                    # This file
 ├── Dockerfile                   # Unified Docker image
 ├── setup_workload.sh           # Workload setup script
 ├── run_analysis.sh             # Analysis execution script
-├── build_docker.sh             # Docker build automation
+├── run_embench_simple.sh       # embench compilation script
+├── build_docker.sh             # Docker image build script
 ├── run_workload.sh             # Workload execution script
 ├── build_and_run.sh            # Complete workflow script
-├── workload_config.json        # Configuration file
+├── workload_config.json        # Workload configuration
+├── README.md                   # User documentation
 ├── documentation/
-│   └── technical_details.md    # Technical documentation
-└── simpoint_output/            # Results directory (created after execution)
+│   └── technical_details.md    # This file
+└── simpoint_output/            # Generated results (after execution)
 ```
 
 ## Contributing
